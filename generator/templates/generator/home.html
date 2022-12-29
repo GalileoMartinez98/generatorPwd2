@@ -1,1 +1,22 @@
-<h1>Bienvenido</h1>
+<form action="password">
+  <h1>Bienvenido</h1>
+
+  <label for="longitud">Select length of your password:</label>
+  <input type="text" />
+
+  <select name="length" id="length">
+    <option value="6">6--characters</option>
+    <option value="7">7--character</option>
+    <option value="8">8--character</option>
+    <option value="9">9--character</option>
+    <option value="10">10--character</option>
+    <option value="14">14--character</option>
+    <option value="20">20--character</option>
+    <option value="25">25--character</option>
+  </select>
+
+  <label for="uppercase">Uppercase</label>
+  <input type="checkbox" name="uppercase" id="uppercase" />
+
+  <button>Generate</button>
+</form>
