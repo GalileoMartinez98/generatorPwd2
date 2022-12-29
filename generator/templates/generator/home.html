@@ -1,27 +1,43 @@
-<form action="password">
-  <h1>Bienvenido</h1>
+{% extends 'generator/layout.html' %} {% block content %}
 
-  <label for="longitud">Select length of your password:</label>
+<div class="col-md-4 offset-md-4">
+  <form action="{% url 'password' %}" class="card card-body p-5" 
+    style="background-color: #121212;">
+    <h1>Bienvenido</h1>
+  
+    <label for="longitud">Select length of your password:</label>
+  
+    <select name="length" id="length" class="form-control">
+      <option value="6">6--characters</option>
+      <option value="7">7--character</option>
+      <option value="8">8--character</option>
+      <option value="9">9--character</option>
+      <option value="10">10--character</option>
+      <option value="14">14--character</option>
+      <option value="20">20--character</option>
+      <option value="25">25--character</option>
+    </select>
 
-  <select name="length" id="length">
-    <option value="6">6--characters</option>
-    <option value="7">7--character</option>
-    <option value="8">8--character</option>
-    <option value="9">9--character</option>
-    <option value="10">10--character</option>
-    <option value="14">14--character</option>
-    <option value="20">20--character</option>
-    <option value="25">25--character</option>
-  </select>
+    <div class="form-check form-switch my-2">
 
-  <label for="uppercase">Uppercase</label>
-  <input type="checkbox" name="uppercase" id="uppercase" />
+      <label form="uppercase" class="form-check-label">Uppercase</label>
+      <input type="checkbox" name="uppercase" id="uppercase" class="form-check-input"/>
+      
+    </div>
 
-  <label for="special">Special characters</label>
-  <input type="checkbox" name="special" id="special" />
+    <div class="form-check form-switch my-2">
+      <label form="special" class="form-check-label">Special characters</label>
+      <input type="checkbox" name="special" id="special" class="form-check-input" />
+    </div>
 
-  <label for="numbers">Numbers</label>
-  <input type="checkbox" name="numbers" id="numbers" />
+    <div class="form-check form-switch my-2">
+      <label form="numbers" class="form-check-label">Numbers</label>
+      <input type="checkbox" name="numbers" id="numbers" class="form-check-input" />
+    </div>
 
-  <button>Generate</button>
-</form>
+  
+  
+    <button class="btn btn-primary">Generate</button>
+  </form>
+</div>
+{% endblock %}
